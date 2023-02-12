@@ -1,0 +1,99 @@
+@echo off
+
+rem Disable the Windows Firewall
+netsh advfirewall set allprofiles state off
+
+rem Remove all temporary files
+del /s /q %temp%\*
+
+rem Clear the event log
+wevtutil cl Application
+wevtutil cl Security
+
+rem Update Windows Defender definitions
+MpCmdRun.exe -SignatureUpdate
+
+rem Check for Windows updates
+wuauclt /detectnow /updatenow
+
+rem Enable the Windows Firewall
+netsh advfirewall set allprofiles state on
+
+
+✔👀tested With CMD but not Windows Task Scheduler:
+
+rem Remove all temporary files
+del /s /q %temp%\*
+C:\Users\Binic\AppData\Local\Temp\0184e181-5df9-47e6-aba9-1016b68821e6.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\13da6a22-2030-4106-b936-43732891c094.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\14ca899e-87ac-415c-b75b-9dd047a7897e.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\2746946a-e99f-47e7-9691-63e2e792a10b.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\2b5e36b1-e7ab-47f7-a29d-c9d682d02a9a.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\36e50e03-7363-4664-8d23-fc868d7f3529.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\37724163-dae6-400f-8342-e2dc6a8e5c63.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\57ddefdd-f0e9-4d35-91a0-cecdd3ecd2f9.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\5ba9b554-96af-4305-b091-3a7016107138.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\5fd8b2c0-81c0-497d-b9a5-a2c6f81795fb.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\6afa2c9b-11f3-416c-bfdb-d1ab01cf8999.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\72d7bb55-8f8a-4ca7-96b4-ac75365edb5a.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\8b37f106-b69a-4ab6-880f-2ec2138b4ca9.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\8d55d1ae-0897-4bad-b646-1d06e7d7c54c.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\961d2f22-fadc-413c-be39-491c6b3f064c.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\aea6e816-2734-4afe-919e-3abd07f7871a.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\af4246f6-ff60-4bfa-9faf-eb1c8ad408b2.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\b8452f6a-4580-4ec2-ba6f-afc276e33ddf.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\c2cbe675-ee81-47ff-bf03-f3fcf93ea17f.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\c5fc591a-42f1-420f-b652-9806890d53d1.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\c62908c8-27a2-4662-97f9-e972cfdf9472.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\d35048c4-fae4-4648-b107-b6df2d556739.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\d8d556e1-7193-40da-b57e-68be418781f5.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\e9d126b6-fe72-4645-8a6f-f4c78b708bbe.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\eb54e4b1-0aa7-4d5d-8fc2-d954ae6643d6.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\fcfc4d7c-0413-4b12-823b-ce26dd08d8e1.tmp
+The process cannot access the file because it is being used by another process.
+C:\Users\Binic\AppData\Local\Temp\FXSAPIDebugLogFile.txt
+The process cannot access the file because it is being used by another process.
+Deleted file - C:\Users\Binic\AppData\Local\Temp\9E38DABE-640E-41DA-99EA-9D132BA790C6\DismHost.exe
+Deleted file - C:\Users\Binic\AppData\Local\Temp\CF2C5323-9831-47E0-9D6E-39E22D1EAF01\DismHost.exe
+
+rem Clear the event log
+wevtutil cl Application
+wevtutil cl Security
+
+rem Update Windows Defender definitions
+MpCmdRun.exe -SignatureUpdate
+'MpCmdRun.exe' is not recognized as an internal or external command,
+operable program or batch file.
+
+rem Check for Windows updates
+wuauclt /detectnow /updatenow
+
+rem Enable the Windows Firewall
+netsh advfirewall set allprofiles state on
+Ok.
+
